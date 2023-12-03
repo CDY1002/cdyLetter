@@ -11,7 +11,7 @@ var textCandidates = ['我们', '现在', '你们', '没有', '大人', '不能'
 
 
 function preload() {
-	customFont = loadFont('font\FZLTXHJW.TTF');
+	customFont = loadFont('./font/FZLTXHJW.TTF');
   }
 
 function setup() {

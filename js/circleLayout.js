@@ -5,7 +5,7 @@
  // .attr("height", 2000);
 var svg_circleLayout = d3.select("#circleLayout")
 // 读取JSON文件
-d3.json("js/letter.json").then(data => {
+d3.json("./js/letter.json").then(data => {
   // 计算每个对象在圆上的位置
   const circleData = data.map((d, i) => {
     const radius = d.r;

@@ -19,6 +19,7 @@ let letterRainEnd = function(p) {
   
       let canvas = p.createCanvas(window.innerWidth, window.innerHeight);
       canvas.parent('letterRainEnd');
+      canvas.style('display', 'block');
   
       p.textFont(customFont);
   

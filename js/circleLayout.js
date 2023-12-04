@@ -2,7 +2,7 @@
 //var svg = d3.select("div")
   //.append("svg")
   //.attr("width", 2000)
- // .attr("height", 2000);
+  //.attr("height", 2000);
 var svg_circleLayout = d3.select("#circleLayout")
 // 读取JSON文件
 d3.json("./js/letter1.2.json").then(data => {

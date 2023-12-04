@@ -19,6 +19,7 @@ let letterRainBegin = function(p) {
   
       let canvas = p.createCanvas(window.innerWidth, window.innerHeight);
       canvas.parent('letterRainBegin');
+      canvas.style('display', 'block');
   
       p.textFont(customFont);
   
@@ -43,7 +44,7 @@ let letterRainBegin = function(p) {
       for (let i = 0; i < textNum; i++) {
         p.push();
         p.translate(positions[i].x, positions[i].y);
-        p.scale(2 * (speeds[i] - minSpeed) / (maxSpeed - minSpeed));
+        p.scale(5 * (speeds[i] - minSpeed) / (maxSpeed - minSpeed));
         p.textFont(customFont);
         p.text(texts[i], 0, 0);
         p.pop();

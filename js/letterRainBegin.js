@@ -17,7 +17,7 @@ let letterRainBegin = function(p) {
     p.setup = function() {
       p.background(255);
   
-      let canvas = p.createCanvas(window.innerWidth, window.innerHeight);
+      let canvas = p.createCanvas(window.innerWidth, window.innerHeight+400);//文字雨向下延续400
       canvas.parent('letterRainBegin');
       canvas.style('display', 'block');
   
@@ -44,14 +44,14 @@ let letterRainBegin = function(p) {
       for (let i = 0; i < textNum; i++) {
         p.push();
         p.translate(positions[i].x, positions[i].y);
-        p.scale( 5 * (speeds[i] - minSpeed) / (maxSpeed - minSpeed));
+        p.scale( 3 * (speeds[i] - minSpeed) / (maxSpeed - minSpeed));
         p.textFont(customFont);
         p.text(texts[i], 0, 0);
         p.pop();
   
         positions[i].y += speeds[i];
   
-        if (positions[i].y > p.windowHeight + 100) {
+        if (positions[i].y > p.windowHeight + 500) {//文字雨消失
           texts[i] = textCandidates[Math.floor(p.random(1) * textCandidates.length)];
           speeds[i] = p.random(minSpeed, maxSpeed);
           positions[i] = { x: p.random(0, p.windowWidth), y: p.random(0, -p.windowHeight * 2) };

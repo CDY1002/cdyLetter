@@ -5,17 +5,17 @@
  // .attr("height", 2000);
 var svg_circleLayout = d3.select("#circleLayout")
 // 读取JSON文件
-d3.json("./js/letter.json").then(data => {
+d3.json("./js/letter1.2.json").then(data => {
   // 计算每个对象在圆上的位置
   const circleData = data.map((d, i) => {
-    const radius = d.r;
+    const radius = d.r*2;
     const textLength = d.letter.length;
     const textAngle = 2 * Math.PI / textLength;
 
     const letterData = d.letter.split("").map((letter, j) => {
       const angle = j * textAngle;
-      const x = 500 + Math.cos(angle) * radius;
-      const y = 500 + Math.sin(angle) * radius;
+      const x = 200 + Math.cos(angle) * radius;
+      const y = 1000 + Math.sin(angle) * radius;
       return { letter, x, y,type:d.type }
       ;
 
@@ -34,7 +34,7 @@ d3.json("./js/letter.json").then(data => {
     .attr("text-anchor", "middle")
     .attr("dominant-baseline", "middle")
     .text(d => d.letter)
-    .style('font-size', '1.4px');//字号
+    .style('font-size', '3px');//字号
 
   // 监听筛选器变化
   d3.select("#color-filter").on("change", function() {
@@ -42,12 +42,21 @@ d3.json("./js/letter.json").then(data => {
 
     // 根据选中的颜色修改文字样式
     texts.attr("fill", d => {
-      if (selectedColor === "粉色" && d.type === 1) {
-        return "pink";
-      } else if (selectedColor === "红色" && d.type === 2) {
-        return "red";
-      } else {
+      if (selectedColor === "遗书" && d.type === 1) {
         return "black";
+      } else if (selectedColor === "离别书" && d.type === 2) {
+        return "black";
+      } else if (selectedColor === "境况" && d.type === 3) {
+        return "black";
+      } else if (selectedColor === "叮嘱" && d.type === 4) {
+        return "black";
+      } else if (selectedColor === "报平安" && d.type === 5) {
+        return "black";
+      }else if (selectedColor === "全部") {
+        return "black";
+      }  
+      else {
+        return "white";
       }
     });
   });

@@ -44,7 +44,7 @@ let letterRainBegin = function(p) {
       for (let i = 0; i < textNum; i++) {
         p.push();
         p.translate(positions[i].x, positions[i].y);
-        p.scale(5 * (speeds[i] - minSpeed) / (maxSpeed - minSpeed));
+        p.scale( 5 * (speeds[i] - minSpeed) / (maxSpeed - minSpeed));
         p.textFont(customFont);
         p.text(texts[i], 0, 0);
         p.pop();

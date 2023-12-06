@@ -8,7 +8,7 @@ var svg_circleLayout = d3.select("#circleLayout")
 d3.json("./js/letter1.2.json").then(data => {
   // 计算每个对象在圆上的位置
   const circleData = data.map((d, i) => {
-    const radius = d.r*2;
+    const radius = d.r*3;
     const textLength = d.letter.length;
     const textAngle = 2 * Math.PI / textLength;
 
@@ -24,6 +24,7 @@ d3.json("./js/letter1.2.json").then(data => {
     return letterData;
   }).flat();
 
+  
   // 在SVG上绘制文字
   const texts = svg_circleLayout.selectAll("text")
     .data(circleData)
@@ -34,13 +35,13 @@ d3.json("./js/letter1.2.json").then(data => {
     .attr("text-anchor", "middle")
     .attr("dominant-baseline", "middle")
     .text(d => d.letter)
-    .style('font-size', '3px');//字号
+    .style('font-size', '4px');//字号
 
   // 监听筛选器变化
   d3.select("#color-filter").on("change", function() {
     const selectedColor = d3.select(this).property("value");
 
-    // 根据选中的颜色修改文字样式
+    // 根据选中的类型显示对应的文字
     texts.attr("fill", d => {
       if (selectedColor === "遗书" && d.type === 1) {
         return "black";

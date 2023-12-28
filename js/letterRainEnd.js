@@ -17,7 +17,7 @@ let letterRainEnd = function(p) {
     p.setup = function() {
       p.background(255);
   
-      let canvas = p.createCanvas(window.innerWidth, window.innerHeight);
+      let canvas = p.createCanvas(window.innerWidth, window.innerHeight+35);
       canvas.parent('letterRainEnd');
       canvas.style('display', 'block');
   

@@ -14,8 +14,8 @@ d3.json("./js/letter1.2.json").then(data => {
 
     const letterData = d.letter.split("").map((letter, j) => {
       const angle = j * textAngle;
-      const x = 200 + Math.cos(angle) * radius;
-      const y = 1000 + Math.sin(angle) * radius;
+      const x = 500 + Math.cos(angle) * radius;
+      const y = 740 + Math.sin(angle) * radius;
       return { letter, x, y,type:d.type }
       ;
 

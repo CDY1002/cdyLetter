@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function () {
       //.attr("transform", "rotate(90)");
 
     // 生成数字范围数组（1881 到 1998）
-    const years = d3.range(1881, 1999);
+    const years = d3.range(1887, 1999);
 
     // 在每列中显示年份，并根据条件设置颜色
     columns.selectAll("text.year")
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
       .attr("class", "year")
       .text(d => d)
       .attr("x", lineHeight / 2)
-      .attr("y", d => (d - 1881) * 7 )  // 调整y坐标，根据实际需要调整倍数
+      .attr("y", d => (d - 1887) * 7 )  // 调整y坐标，调整倍数
       .attr("fill", (d, i, nodes) => {
         const birth = parseInt(nodes[i].parentNode.__data__.birth);
         const death = parseInt(nodes[i].parentNode.__data__.death);
@@ -66,15 +66,16 @@ document.addEventListener("DOMContentLoaded", function () {
         } else if (!isNaN(birth) && !isNaN(death) && birth <= d && death >= d) {
           return "black";
         } else {
-          return "#e9e9e9";
+          return "rgba(251, 251, 251)";//背景色
         }
       })
-      .attr("font-size", "6px");  // 根据实际需要调整字体大小
+      .attr("font-size", "6px")// 字号
+      .attr("font-family", "titleFont") ;
 
     // 在每列下方添加一个白色矩形，用于鼠标悬停时显示文本内容
     columns.append("rect")
       .attr("x", lineHeight / 2)
-      .attr("y", lineHeight + 5) // 调整矩形的位置，根据实际需要调整
+      .attr("y", lineHeight + 5) // 调整矩形的位置
       .attr("width", lineHeight)
       .attr("height", height)
       .attr("fill", "white")
@@ -87,7 +88,7 @@ document.addEventListener("DOMContentLoaded", function () {
       })
       .on("mouseout", function () {
         // 鼠标离开时隐藏文本内容
-        d3.select(this).attr("opacity", 0); // 设置矩形的透明度为0，即隐藏
+        d3.select(this).attr("opacity", 0); // 设置矩形的透明度为0
       });
   });
 });

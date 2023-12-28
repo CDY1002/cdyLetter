@@ -1,87 +1,459 @@
 <!DOCTYPE html>
-<html lang="en">
+<html >
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>100 letters home</title>
-  
+  <link rel="stylesheet" href="main.css">
   <script src="https://cdn.jsdelivr.net/npm/p5@1.9.0/lib/p5.js" type="text/javascript"></script>
   <script src="https://d3js.org/d3.v7.min.js"></script>
 </head>
 
-<body style="background-color:rgb(251, 251, 251);margin: 0;padding: 0;">
+<body>
 <!--文字雨begin-->
-<section class="begin">
-  
-  <img src="gif/begin2.png" style="width: 12%;height: 100vh;object-fit: cover;margin-left:10%; margin-right:4%; float: left; position: absolute"></img>
+<section>
+  <img src="gif/cover.png" style="height: 30vh; position: absolute ;margin-left:700px;margin-top: 220px;"></img>
   <!--<img src="gif\separate.png" style="width: 100%;height: 20vh;object-fit: cover;margin-top:48%;  float: left; position: absolute"></img>-->
-  
-  <div id="letterRainBegin"></div>
-
+  <div id="letterRainBegin" ></div>
+</section>
+<div class="gap"></div>
+<!--简介-->
+<section >
+  <div class="container">
+    <img class="myIcon" src="gif/point1.png"></img>
+    <span class="title">简介</span>
+    <img class="myIcon" src="gif/point1.png"></img>
+  </div>
+  <p class="text_introduction">在战争时期，<br>家书承载着战争期间家庭和个人的情感、思念和希望。<br>这些信件是历史的见证，<br>反映了当时人们的心情和时代背景。<br>通过分析战争时期的100封家书，<br>可以深入了解当时人们的生活、情感和社会背景，<br>为研究战争史提供更加丰富的维度。</p>
+  <p class="text_introduction">作者： 陈丹阳 张瀚文</p>
 </section>
 
+<div class="gap"></div>
 
-<!--发件人-->
-<div class="section">
-<!--发件人生卒年-->
-  <svg id="birthDeath" width="1200" height="1000"></svg>
-  <div class="main_text_full">
-      <p>南京在经历大屠杀之前，正逢新旧之变。旧时代的南京是挑担沿街叫卖的小食贩，是锡匠叮叮当当敲着锡器，是孩童手抓圆形方孔铜钱着急换糖葫芦。新气象的南京是阳光晒干后发烫的沥青马路，是电灯霓虹灯辉映下的车水马龙，是高低丛生错落有致的现代洋楼。新旧辉映的南京是彩色的，也还有朽朽的气息，但它需要的是阳光，却未曾想到迎来惨绝人寰的暴行，直至一片血色，满目荒凉。</p>
-      <p>根据文本，<u>日军攻占南京之后，暴行急剧上升。</u>在日军占领南京的前十天（12.13-12.23），拉贝每天都记录下了较多的恶性事件——居民向安全区委员会诉说被日军侵犯的情况，有时安全区国际委员会，包括外籍人士的住所也未能幸免，比如日军闯入美国女传教士格雷斯·鲍尔小姐的住所，“抢走皮手套、喝掉桌子上的牛奶，还把糖罐全部掏空”；他们还试图开走美国医生 R．F．布雷迪的福特汽车；斯迈思博士的家也被非法入侵；“强奸”、“抢劫”都时有发生。</p>
-      <p>后来，文本中显示越来越多安全区国际委员会的成员阻止相关暴行发生，且日军行为也逐渐有所收敛，这点从《拉贝日记》也可以佐证。据12月26日，《拉贝日记》中写道，“昨天在我这儿没有发生入室行窃，这是两个星期以来的第一次，看上去情况真的有了好转。我这里的难民登记工作今天下午结束了，日本人甚至慷慨地又给另外20个后来偷偷摸摸塞进来的人发了身份证。”</p>
-      <p>但是，<u>到1月底2月初，拉贝的记录数量又开始激增。</u>其中，1938年1月29日与1月30日的日记，记录的数量达到了峰值，分别为48条、44条。这一时期，日本对安全区的打击加强，大量难民遭受日军蹂躏。</p>
-      
-      <p>我们也可以按照事件类型，分别画出每一种事件发生的次数，随时间的变化趋势。<u>在所有的事件中，最高频发生的是“强奸”</u>，并且强奸事件的趋势与所有事件的总趋势十分相似，这是因为强奸事件一直在持续发生，并且贯穿了拉贝的整个记录。具有类似趋势还包括“抢劫”和“伤人”，这两类事件也是高频、持续发生。</p>
-      <p>相比之下，趋势有所增减的事件类型则是“强奸未遂”、“强迫劳动”、“杀人”和“逮捕”。其中，“强奸未遂”和“强迫劳动”在后期有所抬升。这主要是因为许多女性被保护了起来，或者成功逃脱了日军的侵犯，从而导致强奸未遂的记录增多。正因为这样，日军开始四处强迫中国人帮他们“找姑娘”，这构成了后期“强迫劳动”事件的主要来源。“杀人”和“逮捕”的趋势则有所下降，说明日军在严重的人身伤害、人身控制的行为上有所收敛。“强奸”和“抢劫”在后期再次攀升，成为诸多居民在离开安全区，回到自己住所时，再次遭遇到的伤害。</p>
+<!--寄件人-->
+<div id="chapter1_content">
+  <div style="display: flex; justify-content: center;">
+    <div style="width: 150px; align-self: center;">
+      <img class="title_gif" src="gif\letter_w.gif" style="width: 100%; height: 100%;"></img>
+    </div>
+  </div>
+
+<!--寄件人标题-->
+<div id="chapter1" class="chapter-container">
+  <div class="container">
+    <img class="myIcon" src="gif/point1.png"></img>
+    <span class="title">一<span class="highlight">·</span>生平之墨</span>
+    <img class="myIcon" src="gif/point1.png"></img>
   </div>
 </div>
-<!--送信-->
-<img src="gif\职业1.gif" ></img>
-<img src="gif\letter_w.gif" ></img>
-<img src="gif\letter_r.gif" ></img>
-<img src="gif\letter_d.gif" ></img>
-<!--收件人-->
-<!--信的内容-->
+<div>
+  <p class="text_introduction">“好，<br>弟妹，<br>今生就这样与你们作结了!<br>——你们的大哥砚芬嘱”</p>
+  <p class="text_introduction">战火纷飞带来了离别，<br>唯有信件能传达对远方亲人的思念，<br>我们收录了100封战争时期的家书，<br>这些家书出自<span class="highlight">何者笔下</span>，<br>我们将通过数据带领读者了解这些信件<span class="highlight">笔者的故事</span>。</p>
 
+<div class="gap"></div>
+
+<!--生卒年标题-->
+<div class="container">
+  <span class="title_introduction">笔者的时光</span>
+</div>
+<p class="text_introduction">在那段充满硝烟与挣扎的岁月中，<br>许多生命犹如一瞬间的星火，<br>却拥有着比永恒更加强烈的光芒。<br>战争的硝烟下，<br>人们的每一次呼吸、每一次心跳都仿佛是时间的挑战，<br>每一个生命的消逝都是对这个时代残酷暴行的诉说。</p>
+</div>
+<div class="small_gap"></div>
+<!--寄件人生卒年-->
+<div class="container_birth_p">
+  <div class="item_birth_p1">
+    <svg id="birthDeath" width="860" height="880"></svg>
+  </div>
+  <img class="item_birth_p2" src="gif\birhtDeath1.png" ></img>
+</div>
+<div class="container_birth_t">
+  <div class="item_birth_t1">
+    <span class="dot" style="background-color: rgb(0, 0, 0);"></span>
+    <span style="margin-right: 10px;font-size: 12px;"> 笔者活着的时间</span>
+    <span class="dot" style="background-color: #ad323b;"></span>
+    <span style="margin-right: 10px;font-size: 12px;"> 笔者写信的时间</span>
+  </div>
+  <div class="item_birth_t2">
+      <p class="text">我们将战争中写信人的寿命进行了可视化<br>数据中展示了笔者的生卒年份以及写信时间<br>战争时期人们的寿命大多是短暂的<br>许多写信人甚至在信件发出后不久就去世了<br>无数生命成为残酷战争的牺牲品</p>
+  </div>
+  <!--
+  <div class="item_birth_t3">
+    <img  src="gif\letter_d.gif" ></img>
+  </div>-->
+</div>
+<div class="gap"></div>
+<!--职业标题-->
+<div class="container">
+  <span class="title_introduction">职业印记</span>
+</div>
+<p class="text_introduction">在那场席卷整个国家的战火中，<br>职业的身份似乎被硝烟所淹没，<br>每个人都被迫走上了抗争的道路。<br>每个人都在战争的阴影下彼此交织，<br>形成了一张抗战的群像，<br>充满了对家园、对国家的忠诚与牺牲。</p>
+
+<div class="small_gap"></div>
+  <!--寄件人职业-->
+  <div class="container_career">
+    <img class="item_career_gif" id="career" style="width: 640px;height: 777px;" src="gif\职业终2.gif" usemap="#careerexample"></img>
+      
+  <map name="careerexample">
+    <area shape="rect" coords="101,151,350,278" alt="careergoverment" href="#careergoverment">
+    <area shape="rect" coords="358,321,480,463" alt="careersoldier" href="#careersoldier">
+    <area shape="rect" coords="458,421,580,563" alt="careerbusiness" href="#careerbusiness">
+    <area shape="rect" coords="358,571,480,713" alt="careerdoctor" href="#careerdoctor">
+    <area shape="rect" coords="188,571,310,713" alt="careerart" href="#careerart">
+    <area shape="rect" coords="88,521,210,663" alt="careerlabor" href="#careerlabor">
+    <area shape="rect" coords="38,421,160,563" alt="careerteacher" href="#careerteacher">
+  </map>
+    <img class="item_career_p" src="gif\Group 6.png" ></img>
+    <div class="item_career_w">
+    <p class="text_title">职业分布</p>
+    <p class="text">100封家书中，我们对写信者的职业进行了分类，归纳七种职业类别。可以看出在战争背景下，无论什么身份，人们都或多或少面临着分别。</p> 
+    </div>
+  </div>
+  
+  <!--寄件人职业案例-->
+  <img  src="gif\gap.png" id="careergoverment" style="height: 100px;width: 1500px;"></img>
+  <div class="container_careerexample">
+    <a class="item_careerexample_p1" href="#career">
+      <img  style="  width: 90%;"  src="gif\careergoverment.png" ></img>
+    </a>
+    <div class="item_careerexample_w">
+      <p class="wordcloud_title">政府工作者 高文华</p>
+      <p>好久没有与你通信了，这并不是我不愿意，实在因为工作忙。妹妹，你生在二十世纪，你知道吗?你生的时代是一个革命的时代，你知道吗?你生的时代是一个新旧过渡的时代，你知道吗?</p>
+    </div>
+    <img class="item_careerexample_p2" src="gif\pointgoverment.png" ></img>
+  </div>
+
+  <img  src="gif\gap.png" id="careersoldier" style="height: 100px;width: 1500px;"></img>
+  <div class="container_careerexample" >
+    <a class="item_careerexample_p1" href="#career">
+      <img  style="  width: 90%;"   src="gif\careersoldier.png" ></img>
+    </a>
+    <div class="item_careerexample_w">
+      <p class="wordcloud_title">军人 谢晋元</p>
+      <p>十日来信收到，我在义乌诊治鼠疫已得五十多人，半死半活，疫势未减，很忙，短时间不能走开。最要紧的是叫他一定的时候睡和起身，中午叫他睡午觉，一日三餐不可吃得过饱......</p>
+    </div>
+    <img class="item_careerexample_p2" src="gif\pointgoverment.png" ></img>
+  </div>
+
+  <img  src="gif\gap.png" id="careerbusiness" style="height: 100px;width: 1500px;"></img>
+  <div class="container_careerexample" >
+    <a class="item_careerexample_p1" href="#career">
+      <img  style="  width: 90%;"   src="gif\careerbusiness.png" ></img>
+    </a>
+    <div class="item_careerexample_w">
+      <p class="wordcloud_title">商人 吴之骧</p>
+      <p>大立敬并启者，通和两岸被敌机轰炸，幸我店屋及住宅均无损失，但不知后去如何?亦难逆料之中。现在我村敌机不时亦来盘旋，甚高。闻系侦察河路之说，然我村之人民逃走者甚多，现在侄亦搬移住老圣公会舍妹之宅，上暂住。</p>
+    </div>
+    <img class="item_careerexample_p2" src="gif\point11.png" ></img>
+  </div>
+
+  <img  src="gif\gap.png" id="careerdoctor" style="height: 100px;width: 1500px;"></img>
+  <div class="container_careerexample" >
+    <a class="item_careerexample_p1" href="#career">
+      <img  style="  width: 90%;"   src="gif\careerdoctor.png" ></img>
+    </a>
+    <div class="item_careerexample_w">
+      <p class="wordcloud_title">医生 刘宗歆</p>
+      <p>十日来信收到，我在义乌诊治鼠疫已得五十多人，半死半活，疫势未减，很忙，短时间不能走开。最要紧的是叫他一定的时候睡和起身，中午叫他睡午觉，一日三餐不可吃得过饱......</p>
+    </div>
+    <img class="item_careerexample_p2" src="gif\point10.png" ></img>
+  </div>
+
+  <img  src="gif\gap.png" id="careerart" style="height: 100px;width: 1500px;"></img>
+  <div class="container_careerexample" >
+    <a class="item_careerexample_p1" href="#career">
+      <img  style="  width: 90%;"   src="gif\careerart.png" ></img>
+    </a>
+    <div class="item_careerexample_w">
+      <p class="wordcloud_title">文化工作者 钟敬之</p>
+      <p>愚兄身虽在数千里之外，心则无日不为慈亲而不安，而难过，而歉疚!徒以景况不济，势难救助,为之奈何!所幸吾弟现已安然逃出，希望即能就业，埋头技术学习好好锻炼数年，将来总能为社会家庭出些力量。</p>
+    </div>
+    <img class="item_careerexample_p2" src="gif\point10.png" ></img>
+  </div>
+
+  <img  src="gif\gap.png" id="careerlabor" style="height: 100px;width: 1500px;"></img>
+  <div class="container_careerexample" >
+    <a class="item_careerexample_p1" href="#career">
+      <img  style="  width: 90%;"  src="gif\careerlabor.png"></img>
+    </a>
+    <div class="item_careerexample_w">
+      <p class="wordcloud_title">劳工 高御臣</p>
+      <p>跟着大车经过几道日本卡子，还算顺利(没挨打)...我怎么也想不通，怎么中国人一下子变成满洲国人了呢?...路费剩了十块钱，托赶大车的于老板捎回家了，这里花日本钱，三大行的钞票不能用了......</p>
+    </div>
+    <img class="item_careerexample_p2" src="gif\point10.png" ></img>
+  </div>
+  
+  <img  src="gif\gap.png" id="careerteacher" style="height: 100px;width: 1500px;"></img>
+  <div class="container_careerexample" >
+    <a class="item_careerexample_p1" href="#career">
+      <img  style="  width: 90%;"  src="gif\careerteacher.png"></img>
+    </a>
+    <div class="item_careerexample_w">
+      <p class="wordcloud_title">教师 韩雅兰</p>
+      <p>现在找到一个职业，二十块钱一个月薪水，而且要到内地(潜江)工作。实在没有法,在二十七日早晨走了。</p>
+    </div>
+    <img class="item_careerexample_p2" src="gif\point9.png" ></img>
+  </div>
+
+  <!--寄件人职业图文案例-->
+  <!-- <div class="container_career2">
+    <p class="item_career2_p1">
+      <img style="height: 80%;" src="gif\work_p_1.png" ></img>
+    </p>
+    <p class="item_career2_p2">
+      <img style="height: 80%;" src="gif\work_p_2.png" ></img>
+    </p>
+    <p class="item_career2_w1">1940年年仅13岁的高御臣便成为伪满洲国的劳工。1945 年 8 月，日寇投降，他同东北千千万万个劳工一起，回到祖国的怀抱 。</p> 
+    <p class="item_career2_w2">刘宗歆 (1912 ～ 1941) ，副队长兼外科医师，在1941年12月30日在浙江义乌因防治日寇投放的鼠疫细菌受感染牺牲。</p> 
+  </div>
+
+<div class="gap"></div> -->
+  <!--寄件人职业图文案例-->
+  <!-- <div class="container_career3">
+      <img class="item_career3_l" src="gif\work_left.png" ></img>
+      <p class="item_career3_p1">
+        <img style="height: 80%;margin-top: 50px;" src="gif\work_1.png" ></img>
+      </p>
+      <p class="item_career3_p2">
+        <img style="height: 80%;margin-top: 50px;" src="gif\work_2.png" ></img>
+      </p>
+      <p class="item_career3_r">
+        <img style="height: 99%;" src="gif\work_right.png" ></img>
+      </p>
+      <div class="item_career3_w1">
+      <p class="">劳工 高御臣</p>
+      <p class="">跟着大车经过几道日本卡子，还算顺利(没挨打)...我怎么也想不通，怎么中国人一下子变成满洲国人了呢?...路费剩了十块钱，托赶大车的于老板捎回家了，这里花日本钱，三大行的钞票不能用了。</p> 
+      </div>
+      <div class="item_career3_w2">
+        <p class="">医生 刘宗歆</p>
+        <p class="">十日来信收到，我在义乌诊治鼠疫已得五十多人，半死半活，疫势未减，很忙，短时间不能走开。...最要紧的是叫他一定的时候睡和起身，中午叫他睡午觉，一日三餐不可吃得过饱，蔬菜豆腐之类，对于他的身体较宜，肉食反而不很好。一切的坏脾气不可养成，有则力改。</p> 
+      </div>
+ 
+</div> -->
+ </div>
+
+<!--送信-->
+<div class="gap"></div>
+<div id="chapter2_content">
+
+  <div style="display: flex; justify-content: center;">
+    <div style="width: 200px; align-self: center;">
+      <img class="title_gif" src="gif\letter_d.gif"  style="width: 100%; height: 100%;"></img>
+    </div>
+  </div>
+  <div id="chapter2" class="chapter-container">
+    <div class="container">
+      <img class="myIcon" src="gif/point1.png"></img>
+      <span class="title">二<span class="highlight">·</span>情牵万里</span>
+      <img class="myIcon" src="gif/point1.png"></img>
+    </div>
+  </div>
+  <p class="text_introduction">“我先后共寄给你的家信，<br>有七八封了，<br>你收到没有?”</p>
+  <p class="text_introduction">由于战时特殊情况，<br>家书地址如在根据地，<br>一般都能送到。<br>如在敌占区，<br>需要秘密转送地下工作者，<br>加上地下工作者的转送困难或叛变或遇害牺牲等因素，<br>有些信件就无法送达。<br>送达的信件大多也是迟到。<br>但有的信件，需几月，甚至几年。</p>
+
+<div class="gap"></div>
+<!--距离标题-->
+<div class="container">
+  <span class="title_introduction">遥寄之距</span>
+</div>
+<p class="text_introduction">在那段充满硝烟与挣扎的岁月中，<br>许多生命犹如一瞬间的星火，<br>却拥有着比永恒更加强烈的光芒。<br>战争的硝烟下，<br>人们的每一次呼吸、每一次心跳都仿佛是时间的挑战，<br>每一个生命的消逝都是对这个时代残酷暴行的诉说。</p>
+
+<div class="small_gap"></div>
+<!--距离-->
+<div class="container_length_p">
+  <p class="item_length_p1">
+    <img   style="width:100%;"  src="gif\length_last3.gif" ></img>
+  </p>    
+</div>
+<p class="text" style="margin-left: 20%;margin-right: 20%;">由于战时特殊情况，家书地址如在根据地，一般都能送到。<br>如在敌占区，需要秘密转送地下工作者，<br>加上地下工作者的转送困难或叛变或遇害牺牲等因素，<br>有些信件就无法送达。送达的信件大多也是迟到。<br>但有的信件，需几月，甚至几年。</p>
+<div class="gap"></div>
+<!--泪痕标题-->
+<div class="container">
+  <span class="title_introduction">奔波足迹</span>
+</div>
+<p class="text_introduction">在那段充满硝烟与挣扎的岁月中，<br>许多生命犹如一瞬间的星火，<br>却拥有着比永恒更加强烈的光芒。<br>战争的硝烟下，<br>人们的每一次呼吸、每一次心跳都仿佛是时间的挑战，<br>每一个生命的消逝都是对这个时代残酷暴行的诉说。</p>
+
+<div class="small_gap"></div>
+<!--泪痕左-->
+<div class="container_tear_l">
+  <img class="item_tear_lg" src="gif\tearLeft.gif" ></img>
+  <p class="item_tear_lp">
+    <img src="gif\tearLp.png" ></img>
+  </p>
+  <p class="item_tear_lw">"慰儿：要知道没有了你们便没有了我......我虽然在外面，一颗心却天天在您身上呢“这是上海沦陆后小学教员姚稚鲁奔波逃难时在家书里跟女儿说的话 。说完这话不久，他就在忧愤交加中去世，但无人知晓他死于何处 。只有他 先后寄给妻子女儿的 10余封家书，成了这位年轻的丈夫和父亲留在世上仅有的痕迹。</p>
+</div>
+
+<!--泪痕右-->
+<div class="container_tear_r">
+  <p class="item_tear_rg">
+    <img style="height: 100vh;" src="gif\tearRight.gif" ></img>
+  </p>
+  <p class="item_tear_rp">
+    <img src="gif\tearRp.png" ></img>
+  </p>
+  <p class="item_tear_rw">"余子武出身清贫的私塾教师家庭，自幼聪慧努力，1929 年毕业回国后，入伍粤军，1939 年 7 月晋升国民党陆军第 62 军 151 师少将参谋长 。1943 年晋 升为151师少将副师长。牺牲时年仅40岁。</p>
+</div>
+</div>
+<div class="gap"></div>
+
+<!--信的内容-->
+<div>
+  <div style="display: flex; justify-content: center;">
+    <div style="width: 150px; align-self: center;">
+      <img class="title_gif" src="gif\letter_r.gif"  style="width: 100%; height: 100%;"></img>
+    </div>
+  </div>
+<!--信的内容标题-->
+<div id="chapter3" class="chapter-container">
+<div class="container">
+  <img class="myIcon" src="gif/point1.png"></img>
+  <span class="title">三<span class="highlight">·</span>看尽千言</span>
+  <img class="myIcon" src="gif/point1.png"></img>
+</div>
+</div>
+<p class="text_introduction">“亲爱的：<br>别时容易见时难，<br>分离二十一个月了，<br>何日相聚?<br>念、念、念、念!”</p>
+  <p class="text_introduction">这一段段的内心独自不仅记载了那段血与火的历史，<br>而且承载着绵长而醇厚的骨肉亲情。</p>
+ 
+
+<div class="gap"></div>
+<!--文字圆标题-->
+<div class="container">
+  <span class="title_introduction">字里行间</span>
+</div>
+<p class="text_introduction">家书或短小精悍、或长篇大论，<br>承载着不同类型的情感表达与生活状态：<br><span class="highlight">报平安、叮嘱、近况、离别书、遗书</span>。<br>有些<span class="highlight">短篇</span>的家书充满深情，<br>而<span class="highlight">长篇</span>家书则成为历史见证。<br>这些书信无声地诉说着人们在那段时光中的坚韧与深情。</p>
+
+<div class="small_gap"></div>
 <!--文字圆-->
 <div>
-  
-    <svg id="circleLayout" width="1500" height="1000"></svg>
-    <div>
-      <label for="color-filter">选择类型：</label>
-      <select id="color-filter">
-        <option value="全部">全部</option>
-        <option value="遗书">遗书</option>
-        <option value="离别书">离别书</option>
-        <option value="境况">境况</option>
-        <option value="叮嘱">叮嘱</option>
-        <option value="报平安">报平安</option>
-      </select>
-    </div>
+  <div style="text-align: center;margin-bottom: 20px;">
+    <label for="color-filter" style="font-family: textFont;font-size: 18px;">类型·筛选器 ：</label>
+    <select id="color-filter">
+      <option value="全部">全部</option>
+      <option value="遗书">遗书</option>
+      <option value="离别书">离别书</option>
+      <option value="境况">近况</option>
+      <option value="叮嘱">叮嘱</option>
+      <option value="报平安">报平安</option>
+    </select>
   </div>
+  <p>
+    <svg id="circleLayout" width="1800" height="740"></svg> 
+  <img src="gif\number.png" style="width: 100%;"></img>
+  </p>
   
-  <div class="section">
-    <div class="main_text_full">
-        <p>南京在经历大屠杀之前，正逢新旧之变。旧时代的南京是挑担沿街叫卖的小食贩，是锡匠叮叮当当敲着锡器，是孩童手抓圆形方孔铜钱着急换糖葫芦。新气象的南京是阳光晒干后发烫的沥青马路，是电灯霓虹灯辉映下的车水马龙，是高低丛生错落有致的现代洋楼。新旧辉映的南京是彩色的，也还有朽朽的气息，但它需要的是阳光，却未曾想到迎来惨绝人寰的暴行，直至一片血色，满目荒凉。</p>
-        <p>根据文本，<u>日军攻占南京之后，暴行急剧上升。</u>在日军占领南京的前十天（12.13-12.23），拉贝每天都记录下了较多的恶性事件——居民向安全区委员会诉说被日军侵犯的情况，有时安全区国际委员会，包括外籍人士的住所也未能幸免，比如日军闯入美国女传教士格雷斯·鲍尔小姐的住所，“抢走皮手套、喝掉桌子上的牛奶，还把糖罐全部掏空”；他们还试图开走美国医生 R．F．布雷迪的福特汽车；斯迈思博士的家也被非法入侵；“强奸”、“抢劫”都时有发生。</p>
-        <p>后来，文本中显示越来越多安全区国际委员会的成员阻止相关暴行发生，且日军行为也逐渐有所收敛，这点从《拉贝日记》也可以佐证。据12月26日，《拉贝日记》中写道，“昨天在我这儿没有发生入室行窃，这是两个星期以来的第一次，看上去情况真的有了好转。我这里的难民登记工作今天下午结束了，日本人甚至慷慨地又给另外20个后来偷偷摸摸塞进来的人发了身份证。”</p>
-        <p>但是，<u>到1月底2月初，拉贝的记录数量又开始激增。</u>其中，1938年1月29日与1月30日的日记，记录的数量达到了峰值，分别为48条、44条。这一时期，日本对安全区的打击加强，大量难民遭受日军蹂躏。</p>
-        
-        <p>我们也可以按照事件类型，分别画出每一种事件发生的次数，随时间的变化趋势。<u>在所有的事件中，最高频发生的是“强奸”</u>，并且强奸事件的趋势与所有事件的总趋势十分相似，这是因为强奸事件一直在持续发生，并且贯穿了拉贝的整个记录。具有类似趋势还包括“抢劫”和“伤人”，这两类事件也是高频、持续发生。</p>
-        <p>相比之下，趋势有所增减的事件类型则是“强奸未遂”、“强迫劳动”、“杀人”和“逮捕”。其中，“强奸未遂”和“强迫劳动”在后期有所抬升。这主要是因为许多女性被保护了起来，或者成功逃脱了日军的侵犯，从而导致强奸未遂的记录增多。正因为这样，日军开始四处强迫中国人帮他们“找姑娘”，这构成了后期“强迫劳动”事件的主要来源。“杀人”和“逮捕”的趋势则有所下降，说明日军在严重的人身伤害、人身控制的行为上有所收敛。“强奸”和“抢劫”在后期再次攀升，成为诸多居民在离开安全区，回到自己住所时，再次遭遇到的伤害。</p>
-    </div>
+</div>
+<!--文字圆文案-->
+<div class="container_circle">
+  <p class="item_circle_n1">36</p>
+  <p class="item_circle_n2">1510</p>
+  <div class="item_circle_p"> 
+    <img src="gif/Line.png"></img>
   </div>
+  <p class="item_circle_w1">最短的家书是一封遗书，仅有36字，是1937年9月，即将率军出川抗战的傅常将军给家人留下了一封简短的"遗书" "遗书"后被刻在灯拒上，得以完好地保 存下来。这封特殊的家书也成为川军舍家为国、奔赴国难的历史证物，弥足珍贵 。</p>
+  <p class="item_circle_w2">最长的一封信有1510字，是在上海，周平民收到了外甥百均的来信，告诉他父母亲得知健民死于战场后整天以泪洗面。他给外甥复信，请他代自己多多安慰伤心的老人。这封信是作者哭着写的，情真意切，饱含着爱国、爱家的双重感情 。 </p>
+</div>
+<div class="small_gap"></div>
+<p style="text-align: center;">
+  <img src="gif\type.png"></img>
+</p>
+<p class="text" style="margin-left: 20%; margin-right: 20%;margin-top: 50px;">我们对家书对内容进行了分析，将信件分类为：近况、叮嘱、报平安、离别书、遗书五个类型，并计算了每个类型的平均字数。遗书和离别书大多是简短的，叮嘱和近况则篇幅较长，这与写信者身处的境况有较大联系。</p>
+<div class="gap"></div>
 
+<!--词云图标题-->
+<div class="container">
+  <span class="title_introduction">词云心曲</span>
+</div>
+<p class="text_introduction">无论是母亲、父亲、丈夫、妻子还是孩子，<br>每个人在打开那封寄自远方的信件时，<br>都是一次深入灵魂的感受。<br>我们对这些家书<span class="highlight">根据收件人身份进行了分类</span>，<br>并可视化出每个类型的信件的<span class="highlight">高频词</span>。<br>这些字里行间中承载了他们感情牵绊的纽带，<br>也是战争岁月中不可或缺的心灵寄托。</p>
+
+<div class="small_gap"></div>
+<!--词云图-->
+<div class="container_wordcloud">
+  <img class="item_wordcloud_p" src="gif/grandmotherwordcloud.png"></img>
+  <div class="item_wordcloud_w">
+    <p class="wordcloud_title">给祖父母的信</p>
+    <div style="background-color: #616161;padding: 10px;">
+      <p style="color: #FBFBFB;">“你老十一月二十二日写给我的第拾陆封信，我昨天奉读了。就是你前两次给我的挂号信也收到了,当即复了你老一封,想已收阅了吧?你老屡次来信总要我早日回家，不错，这也是我自已说过的。但是现在环境不能不使我犹豫。不过今年是无论怎样不能回家了，时间来不及了......”</p>
+      <p style="color: #FBFBFB;text-align: right;">—— 文绍珍</p>
+    </div>
+    <p>写祖父母的的信中大多提及：老人家、敬请、未知。用词较为严谨尊重，多表达对长辈的问候。较少提及战争之事。</p>
+  </div>
+</div> 
+<img  src="gif\gap.png" id="careerlabor" style="height: 100px;width: 1500px;"></img>
+<div class="container_wordcloud">
+  <img class="item_wordcloud_p" src="gif/motherwordcloud.png"></img>
+  <div class="item_wordcloud_w">
+    <p class="wordcloud_title">给父母的信</p>
+    <div style="background-color: #616161;padding: 10px;">
+      <p style="color: #FBFBFB;">“儿五月间接到家中两封信了。四月二十四日写的信已收到了，知大人身体安康，家事略知，但家中一切儿是无不关心的。现在母亲寿有七旬了，儿祝你身体健康！家中的困难在抗战的时代是不可免的，母亲切不必担心，我想定有哥哥一手负担。我在外身体都是很强健的，衣食都是很安乐的……..”</p>
+      <p style="color: #FBFBFB;text-align: right;">—— 张天伟</p>
+    </div>
+    <p>写给父母的的信中高频词为：大人（指父母）、身体、工作。这些文字包含了对父母的关切，以及自己的近况的陈述，望父母不必担心。</p>
+  </div>
+</div> 
+<img  src="gif\gap.png" id="careerlabor" style="height: 100px;width: 1500px;"></img>
+<div class="container_wordcloud">
+  <img class="item_wordcloud_p" src="gif/wifewordcloud.png"></img>
+  <div class="item_wordcloud_w">
+    <p class="wordcloud_title">给配偶的信</p>
+    <div style="background-color: #616161;padding: 10px;">
+      <p style="color: #FBFBFB;">“我们又要离别了!当你听了离别的声音，或者不高兴吧!亲爱的，谁不愿骨肉的团聚，谁不留恋家庭的甜蜜。要知道国家民族重要，个人前途重要，因此又要别离亲人，而远征他乡了......”</p>
+      <p style="color: #FBFBFB;text-align: right;">—— 胡孟晋</p>
+    </div>
+    <p>写给配偶的信多提及：想念、金钱相关的词语，这反映了身处他乡的人们对爱人的牵挂和对家庭的担忧。</p>
+  </div>
+</div> 
+<img  src="gif\gap.png" id="careerlabor" style="height: 100px;width: 1500px;"></img>
+<div class="container_wordcloud">
+  <img class="item_wordcloud_p" src="gif/childwordcloud.png"></img>
+  <div class="item_wordcloud_w">
+    <p class="wordcloud_title">给孩子的信</p>
+    <div style="background-color: #616161;padding: 10px;">
+      <p style="color: #FBFBFB;">“你年已不小，本拟父子天年，未想半途分别，你之命，父之运也! 所望读书尽心，务必前途。侍母要孝，勿劳其生气，以使领你们 兄弟子妹过日子如你母有生气时，你要跄之请罪，以何时欢喜为止，兄友弟恭，妹妹之领导， 你的责任太大......”</p>
+      <p style="color: #FBFBFB;text-align: right;">—— 于登云</p>
+    </div>
+    <p>写给孩子的信中，母亲、社会、希望、读书这些词语出现频次较高，这体现了作为长辈对后辈的叮嘱与期许。</p>
+  </div>
+</div> 
+</div>
+<div class="gap"></div>
+<!--结语-->
+<section >
+  <div class="container">
+    <img class="myIcon" src="gif/point1.png"></img>
+    <span class="title">结语</span>
+    <img class="myIcon" src="gif/point1.png"></img>
+  </div>
+  <p class="text_introduction">1924-1950年间的一百封家书，<br>记录了人们坚韧不拔的精神，<br>展示了爱、希望和牵挂的不灭火种。<br>战争无疑给人类带来了巨大的伤痛，<br>但在这些家书中，<br>我们也看到了人们对和平的向往和对未来的期许。<br><br>正是历史留给我们最珍贵的遗产。<br>让我们牢记这段历史，<br>铭记那些家书背后所传递的情感和力量，<br>使和平之花在我们的时代中绽放。</p>
+</section>
   <!--文字雨End-->
   <section>
-    <div id="letterRainEnd"></div>
+    
+    <div  id="letterRainEnd">
+      <!--img style="position:absolute;padding-top:5%;align-items: center;margin: 0 auto; max-width: 95%;"src="gif\letterRain2.png" ></img>-->
+      <!--<img style="position:absolute;padding-top:5%;align-items: center;margin: 0 auto; max-width: 95%;mix-blend-mode: soft-light;"src="gif\rainbow.png" ></img>-->
+
+    </div>
+    
   </section>
-  
+  <script>
+    window.addEventListener('scroll', function () {
+       const chapterContainers = document.querySelectorAll('.chapter-container');
+
+       chapterContainers.forEach((container) => {
+          const rect = container.getBoundingClientRect();
+
+          if (rect.top <= 0) {
+             container.classList.add('sticky');
+          } else {
+             container.classList.remove('sticky');
+          }
+       });
+    });
+ </script>
   <script src="js/circleLayout.js"></script>
   <script src="js/birthDeath.js"></script>
-  <script src="js/letterRainBegin.js" type="text/javascript"></script>
-  <script src="js/letterRainEnd.js" type="text/javascript"></script>
+  <script src="js/letterRainBegin1.js" type="text/javascript"></script>
+  <script src="js/letterRainEnd1.js" type="text/javascript"></script>
 
 </body>
 

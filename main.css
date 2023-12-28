@@ -1,0 +1,422 @@
+@font-face {
+  font-family: "titleFont";
+  src: url("./font/FZLTZHUNHJW.TTF");
+}
+@font-face {
+  font-family: "textFont";
+  src: url("./font/FZLTZHUNHK.TTF");
+}
+html, body {
+  margin: 0px;
+  padding: 0;
+}
+body{
+  background-color: rgb(251,251,251);
+  overflow-x:hidden;
+}
+ul {
+  overflow: auto;
+  scroll-snap-type: both mandatory;
+  overscroll-behavior-x: contain;
+}
+.small_gap{
+  margin-top: 100px;
+}
+.gap{
+  margin-top: 300px;
+}
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* 添加水平居中 */
+}
+.highlight {
+  font-weight:bold;
+  color: #BB3131;
+}
+.myIcon {
+  width: 64px;
+  height: 64px;
+}
+/* 调整图标和文字之间的间距 */
+.section {
+  clear: both;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.dot {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+.text{
+  font-family: "textFont";
+  font-size: 14px;
+  line-height: 2;
+  /*margin-left: 20%;*/
+  margin-right: 20%;
+  text-align: left;
+}
+.text_title{
+  font-family: "textFont";
+  font-size: 14px;
+  line-height: 2;
+  /*margin-left: 10%;*/
+  margin-right: 10%;
+}
+.text_introduction{
+  font-family: "textFont";
+  text-align: center;
+  margin-top: 40px;
+  font-size: 14px;
+  line-height: 2.5;
+  margin-left: 24%;
+  margin-right: 24%;
+  /*margin-bottom: 500px;*/
+}
+
+.title_introduction {
+  font-size: 28px;
+  line-height: 28px;
+  text-align: center;
+  font-weight: 500;
+  /*margin-top: 200px;*/
+  font-family: 'titleFont';
+  text-shadow: 1px 1px 2px black;/*阴影样式*/
+}
+.title {
+  font-size: 32px;
+  text-shadow: 1px 1px 2px black;/*阴影样式*/
+  text-align: center;
+  font-weight: 500;
+  /*margin-top: 20px;*/
+  font-family: 'titleFont';
+}
+
+.c{
+  align-items: center;
+}
+/*吸顶效果*/
+.chapter-container {
+  position: sticky;
+  top: 0;
+  background-color: rgb(251,251,251);
+  z-index: 1000;
+  padding: 10px;
+}
+
+.chapter-container.sticky {
+  background-color: rgb(251,251,251);
+  font-size: 1.2em;
+}
+
+/*职业部分布局*/
+.container_career {
+  display: grid;
+  grid-template-columns: 20% auto auto 20%;
+  grid-template-rows: 50% 25% 25%;
+  grid-template-areas: 
+    ". . gif ."
+    ". p gif ."
+    ". w gif .";
+  margin-bottom: 100px;
+}
+.item_career_gif {
+  grid-area: gif;
+  width: 640px
+}
+.item_career_p {
+  grid-area:p;
+  width: 240px;
+}
+.item_career_w {
+  grid-area: w;
+}
+/*职业案例布局*/
+.container_careerexample {
+  display: grid;
+  grid-template-columns: 20% 10% auto 10% 20%;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    ". p1 w p2 .";
+}
+.item_careerexample_p1 {
+  grid-area:p1;
+
+}
+.item_careerexample_w {
+  grid-area: w;
+  font-size: 14px;
+  line-height: 1.8;
+  text-align: left;
+  font-family: 'textFont';
+}
+.item_careerexample_p2 {
+  grid-area: p2;
+  width: 80%;
+}
+/*职业案例部分布局*/
+.container_career2 {
+  display: grid;
+  grid-template-columns: 10% auto 20% auto 10%;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    ". p1 . p2 ."
+    ". w1 . w2 .";
+  margin-bottom: 100px;
+}
+.item_career2_p1 {
+  grid-area:p1;
+  text-align: center;
+}
+.item_career2_w1 {
+  grid-area: w1;
+  font-size: 14px;
+  line-height: 1.8;
+  text-align: center;
+  font-family: 'textFont';
+}
+.item_career2_p2 {
+  grid-area:p2;
+  text-align: center;
+}
+.item_career2_w2 {
+  grid-area: w2;
+  font-size: 14px;
+  line-height: 1.8;
+  text-align: center;
+  font-family: 'textFont';
+}
+/*职业案例部分图文布局*/
+.container_career3 {
+  display: grid;
+  grid-template-columns: 30% auto 30%;
+  grid-template-rows: 25% auto 25% auto;
+  scroll-snap-type: y mandatory;
+  grid-template-areas: 
+    "l p1 r"
+    "l w1 r"
+    "l p2 r"
+    "l w2 r";
+  /*margin-bottom: 100px;*/
+}
+.item_career3_l {
+  grid-area: l;
+  height: 100vh;
+  margin-top: 10px;
+}
+.item_career3_p1 {
+  grid-area:p1;
+  text-align: center;
+  mix-blend-mode: multiply; 
+  height: 22vh;
+
+}
+.item_career3_w1 {
+  grid-area: w1;
+  margin-left: 10%;
+  margin-right: 10%;
+  font-size: 14px;
+  line-height: 1.8;
+  text-align: center;
+  font-family: 'textFont';
+  
+}
+.item_career3_p2 {
+  grid-area: p2;
+  text-align: center;
+  mix-blend-mode: multiply; 
+  height: 22vh;
+}
+.item_career3_w2 {
+  grid-area:w2;
+  margin-left: 10%;
+  margin-right: 10%;
+  font-size: 14px;
+  line-height: 1.8;
+  text-align: center;
+  font-family: 'textFont';
+}
+.item_career3_r {
+  grid-area: r;
+  height: 100vh;
+  text-align: right;
+}
+
+
+
+/*生卒年部分图片布局*/
+.container_birth_p {
+  display: grid;
+  grid-template-columns: 10% 70% 10% 10%;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    ". p1 p2 .";
+}
+.item_birth_p1 {
+  grid-area: p1;
+}
+.item_birth_p2 {
+  grid-area:p2;
+}
+
+/*生卒年部分文字布局*/
+.container_birth_t {
+  display: grid;
+  grid-template-columns: 10% auto 10%;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    ". t1 ."
+    ". t2 .";
+}
+.item_birth_t1 {
+  grid-area: t1;
+}
+.item_birth_t2 {
+  grid-area:t2;
+  text-align: center;
+}
+/*
+.item_birth_t3 {
+  grid-area:t3;
+}*/
+
+/*距离部分图片布局*/
+.container_length_p {
+  display: grid;
+  grid-template-columns: 20% auto 20%;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    ". p1 .";
+}
+.item_length_p1 {
+  grid-area: p1;
+  text-align: center;
+
+}
+
+
+
+/*泪痕左部分图片布局*/
+.container_tear_l {
+  display: grid;
+  grid-template-columns: 60% 40%;
+  grid-template-rows: 60% 20% 20%;
+  scroll-snap-type: y mandatory;
+  grid-template-areas: 
+    "g ."
+    "g p"
+    "g w";
+}
+.item_tear_lg {
+  grid-area: g;
+  height: 100vh;
+}
+.item_tear_lp {
+  grid-area: p;
+  text-align: center;
+}
+.item_tear_lw {
+  grid-area: w;
+  margin-right: 10%;
+  font-size: 14px;
+  line-height: 1.8;
+  font-family: 'textFont';
+}
+
+/*泪痕右部分图片布局*/
+.container_tear_r {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  grid-template-rows: 60% 20% 20%;
+  scroll-snap-type: y mandatory;
+  grid-template-areas: 
+    ". r"
+    "p r"
+    "w r";
+}
+.item_tear_rg {
+  grid-area: r;
+  height: 100vh;
+  text-align: right;
+}
+.item_tear_rp {
+  grid-area: p;
+  text-align: center;
+}
+.item_tear_rw {
+  grid-area: w;
+  margin-left: 10%;
+  font-size: 14px;
+  line-height: 1.8;
+  font-family: 'textFont';
+}
+
+/*文字圆文案*/
+.container_circle {
+  display: grid;
+  grid-template-columns: 20% 20% 40% 20%;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    ". n1 w1 ."
+    ". p . ."
+    ". n2 w2 .";
+}
+.item_circle_n1 {
+  grid-area: n1;
+  font-size: 36px;
+  line-height: 1.8;
+  font-family: 'titleFont';
+  text-align: center;
+}
+.item_circle_n2 {
+  grid-area: n2;
+  font-size: 36px;
+  line-height: 1.8;
+  font-family: 'titleFont';
+  text-align: center;
+}
+.item_circle_w1 {
+  grid-area: w1;
+  font-size: 14px;
+  line-height: 1.8;
+  font-family: 'textFont';
+  vertical-align:middle;
+  
+}
+.item_circle_w2 {
+  grid-area: w2;
+  font-size: 14px;
+  line-height: 1.8;
+  font-family: 'textFont';
+  vertical-align:middle;
+}
+.item_circle_p {
+  grid-area: p;
+  text-align: center;
+}
+/*词云图*/
+.container_wordcloud {
+  display: grid;
+  grid-template-columns: 20% 30% 30% 20%;
+  grid-template-rows: auto;
+  grid-template-areas: 
+    ". p w .";
+}
+.item_wordcloud_p {
+  grid-area: p;
+}
+.item_wordcloud_w {
+  grid-area: w;
+  font-size: 14px;
+  line-height: 1.8;
+  font-family: 'textFont';
+  text-align: left;
+}
+.wordcloud_title{
+  font-family: 'textFont';
+  font-size: 20px;
+  text-align: left;
+}

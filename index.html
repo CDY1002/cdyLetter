@@ -1,26 +1,26 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-    <title id="textDisplay" class="centered-text"></title>
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <style>
-        .centered-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            font-size: 24px;
-            width: 80%;
-        }
-    </style>
+<meta charset="UTF-8">
+<title>随机文字显示</title>
+<style>
+    body, html {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 20px;
+        text-align: center;
+    }
+</style>
 </head>
-<body onload="displayRandomText()">
-    <p id="textDisplay" class="centered-text"></p>
-    <script>
-        function displayRandomText() {
-            var textArray = [
-                "There was a song I couldn't get out of my head.Eventually, I realized the song was about you, and like that earworm, I can't get you out of my heart.So, what I'm trying to say is, you're my heartworm.",
+<body>
+<div id="randomText"></div>
+<script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var texts = [
+        "There was a song I couldn't get out of my head.Eventually, I realized the song was about you, and like that earworm, I can't get you out of my heart.So, what I'm trying to say is, you're my heartworm.",
                 "Amy, there's no denying I have feelings for you that can't be explained in any other way.I briefly considered that I had a brain parasite, but that seems even more farfetched. The only conclusion was love.",
                 "A minute on the lips, a lifetime on the hips.",
                 "Penny, we are made of particles that have existed since the moment the universe began.I like to think those atoms traveled 14 billion years through time and space to created us, so that we could be together and make each other whold.",
@@ -30,10 +30,11 @@
                 "I believe that God created the world in six days, and on the seventh, he made you to annoy me.",
                 "Hey girl, do you love water? 'Cause that means you love 80% of me.",
                 "Your words fall like acid rain on the wounded petals of my heart."
-            ];
-            var randomIndex = Math.floor(Math.random() * textArray.length);
-            document.getElementById("textDisplay").innerText = textArray[randomIndex];
-        }
-    </script>
+        ];
+        var randomIndex = Math.floor(Math.random() * texts.length);
+        document.getElementById("randomText").innerText = texts[randomIndex];
+    });
+</script>
 </body>
 </html>
+

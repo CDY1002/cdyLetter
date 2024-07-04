@@ -3,6 +3,10 @@
   src: url("./font/FZLTZHUNHJW.TTF");
 }
 @font-face {
+  font-family: "EnglishFont";
+  src: url("./font/STLITI.TTF");
+}
+@font-face {
   font-family: "textFont";
   src: url("./font/FZLTZHUNHK.TTF");
 }
